@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:imc_calculator/core/app_colors.dart';
+import 'package:imc_calculator/provider/HeightProvider.dart';
+import 'package:imc_calculator/provider/WeightProvider.dart';
 import 'package:imc_calculator/screens/home_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Weightprovider()),
+        ChangeNotifierProvider(create: (_) => Heightprovider()),
+      ],
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {

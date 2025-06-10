@@ -3,12 +3,12 @@ import 'package:imc_calculator/core/app_colors.dart';
 import 'package:imc_calculator/core/text_styles.dart';
 
 class GenderSelector extends StatefulWidget {
-  String? selectedGender;
+  final String selectedGender;
   ValueChanged<String> onGenderChanged;
   GenderSelector({
     super.key,
-    required this.selectedGender,
     required this.onGenderChanged,
+    required this.selectedGender,
   });
 
   @override
